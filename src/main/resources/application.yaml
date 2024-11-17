@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+management:
+  server:
+    port: 9080
+
+logging:
+  level:
+    root: INFO
+
+# Configuration regarding usage in memory h2 database
+spring:
+  thymeleaf:
+    check-template-location: false
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: ${SHOW_SQL:true}
+
+jwt:
+  secret: absfol7814lqmva7891294nn9asa783nr293urnq9adm38ry2
+
+users:
+  starter:
+    enabled: true
+    data:
+      users:
+        - username: 'Admin123321'
+          password: 'Admin123321_#@!'
+          email: 'admin_1@rental.com'
+          first-name: 'Bob'
+          last-name: 'Dylan'
+          phone-number: '887102990'
+          national-id: '92102005998'
+          enabled: true
